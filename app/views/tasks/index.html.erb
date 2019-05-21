@@ -4,10 +4,12 @@
       <% @tasks.each do |task| %>
       <div>
         <%= check_box_tag '', '', task.completed %>
-        <%= link_to task.title, task_path(task) %>
+        <%= link_to task.title, task_path(task) %> | <%= link_to raw('<i class="fas fa-trash-alt"></i>'), task_path(task), method: :delete %> |
       </div>
       <% end %>
   </div>
-  <br>
-  <%= link_to %>
+</div>
+<hr>
+<div class="row">
+  <%= link_to "Add new Task", task_new_path() %>
 </div>
